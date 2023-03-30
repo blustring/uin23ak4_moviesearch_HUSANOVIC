@@ -1,28 +1,34 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
 
+
+$body-bg-color: #141414;
+$body-text-color: #ffffff;
+
 body {
-	background: #141414;
-	color: #ffffff;
+	background: $body-bg-color;
+	color: $body-text-color;
 }
 
-.movie-app > .row {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+.movie-app {
+	> .row {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+	}
 }
 
 .image-container {
 	position: relative;
 	transition: transform 0.2s;
-}
 
-.image-container:hover {
-	cursor: pointer;
-	transform: scale(1.1);
-}
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.1);
 
-.image-container:hover .overlay {
-	opacity: 1;
+		.overlay {
+			opacity: 1;
+		}
+	}
 }
 
 .overlay {
